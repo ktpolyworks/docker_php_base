@@ -24,16 +24,15 @@ services:
         volumes:
             - ./mysql/data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: 12345
-            TZ: "Asia/Tokyo"
+            MYSQL_ROOT_PASSWORD: 123456
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         environment:
             - PMA_ARBITRARY=1
-            - PMA_HOST=mysql
+            - PMA_HOST=db
             - PMA_USER=root
-            - PMA_PASSWORD=12345
+            - PMA_PASSWORD=123456
         ports:
             - 8888:80
         depends_on:
